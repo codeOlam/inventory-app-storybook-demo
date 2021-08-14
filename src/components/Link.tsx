@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "@emotion/styled-base";
 import PropTypes from 'prop-types';
 
 import { linkStyles, applyStyle, LinkA } from "./LinkStyles";
@@ -20,6 +19,8 @@ Link.propTypes ={
     children: PropTypes.node,
     secondary: PropTypes.bool,
     tertiary: PropTypes.bool,
+    href: PropTypes.string,
+    to: PropTypes.string,
 }
 
 Link.defaultProps = {
@@ -27,4 +28,6 @@ Link.defaultProps = {
     LinkWrapper: undefined,
     secondary: false,
     tertiary: false,
+    href: "#",
+    to: "#",
   };
