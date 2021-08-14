@@ -71,13 +71,13 @@ export const LinkA = styled.a`
   ${linkStyles};
 `;
 
-export const applyStyle = LinkWrapper => {
-    return (
-      LinkWrapper &&
-      styled(({ containsIcon, inverse, nochrome, secondary, tertiary, ...linkWrapperRest }) => (
-        <LinkWrapper {...linkWrapperRest} />
-      ))`
-        ${linkStyles};
-      `
-    );
-  };
+export const applyStyle = (LinkWrapper: any) => {
+  return (
+    LinkWrapper &&
+    styled(({ secondary, tertiary, ...linkWrapperRest }) => (
+      <LinkWrapper {...linkWrapperRest} />
+    ))`
+      ${linkStyles};
+    `
+  );
+};
