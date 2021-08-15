@@ -8,15 +8,25 @@
   line-height: 1;
 }
 .link--primary {
-  color: white;
-  background-color: #1ea7fd;
+  color: #999999;
+  background-color: transparent;
 }
 .link--secondary {
-  color: #333;
+  color: #666666;
   background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 }
-.button--with-icon {
-  font-size: 12px;
+.link--with-icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
   padding: 10px 16px;
+}
+.link :hover :focus {
+  cursor: pointer;
+  transform: translateY(-1px);
+  color: #444444;
 }

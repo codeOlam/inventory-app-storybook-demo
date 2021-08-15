@@ -1,27 +1,29 @@
 import React from "react";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Link } from "../components/Link";
-import { StoryLinkWrapper } from "../components/StoryLinkWrapper";
 
-export default {
+
+export default{
     title: 'Inventory App Demo/Link',
     component: Link,
-  };
+} as ComponentMeta<typeof Link>;
 
-export const AllLinks = (args: any) =>(
-    <div>
-    <Link secondary href="https://storybook.js.org/tutorials/">
-      Secondary
-    </Link>
-    <br />
-    <Link tertiary href="https://storybook.js.org/tutorials/">
-    tertiary
-    </Link>
-    <br />
-    <Link tertiary LinkWrapper={StoryLinkWrapper} href="http://storybook.js.org">
-      has a LinkWrapper like GatsbyLink or NextLink
-    </Link>
-    {/* gatsby and styled-components don't work nicely together  */}
-    {/* eslint-disable-next-line */}
-    </div>
-);
+const Template: ComponentStory<typeof Link> = (args) => <Link {...args}/>
+
+export const PrimaryLink = Template.bind({});
+PrimaryLink.args = {
+  content: 'primary Link'
+};
+
+export const SecondaryLink = Template.bind({});
+SecondaryLink.args = {
+  primary: false,
+  content: 'secondary Link'
+};
+
+export const IconLink = Template.bind({});
+IconLink.args = {
+  hasIcon: true,
+  content: 'Link with Icon'
+};

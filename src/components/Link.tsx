@@ -1,33 +1,33 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import './link.css';
 
-import { linkStyles, applyStyle, LinkA } from "./LinkStyles";
-
-export function Link({LinkWrapper, children, ...rest}: any){
-    const StyledLinkWrapper = applyStyle(LinkWrapper)
-
-    let SelectedLink = LinkA;
-    if(LinkWrapper){
-        SelectedLink = StyledLinkWrapper
-    }
-
-    return <SelectedLink{...rest}/>
-}
-
-Link.propTypes ={
-    LinkWrapper: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
-    children: PropTypes.node,
-    secondary: PropTypes.bool,
-    tertiary: PropTypes.bool,
-    href: PropTypes.string,
-    to: PropTypes.string,
-}
-
-Link.defaultProps = {
-    children: null,
-    LinkWrapper: undefined,
-    secondary: false,
-    tertiary: false,
-    href: "#",
-    to: "#",
+interface LinkProps {
+    primary?: boolean;
+    hasIcon?: boolean;
+    href?: string;
+    content: string;
+    onClick?: () => void;
   };
+
+  export const Link = ({
+      primary = true,
+      hasIcon = false,
+      href,
+      content,
+      ...props
+  }: LinkProps) =>{
+      const appearance = primary ? 'link--primary':'link--secondary'; 
+      const withIcon = hasIcon? 'link--with-icon': null
+    return (
+        <div>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a
+                className={['link', appearance, withIcon].join(' ')}
+                href={href}
+                {...props}
+            >
+            {content}
+            </a>
+        </div>
+    )
+};
