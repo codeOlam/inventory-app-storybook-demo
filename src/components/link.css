@@ -16,9 +16,6 @@
   background-color: transparent;
 }
 .link--with-icon {
-  display: inline-block;
-  height: 1em;
-  width: 1em;
   vertical-align: text-top;
   position: relative;
   bottom: -0.125em;

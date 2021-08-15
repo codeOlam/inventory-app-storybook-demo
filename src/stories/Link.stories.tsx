@@ -25,5 +25,13 @@ SecondaryLink.args = {
 export const IconLink = Template.bind({});
 IconLink.args = {
   hasIcon: true,
+  block: false,
+  addIcon: 'facehappy',
   content: 'Link with Icon'
+};
+
+export const LinkWithHref = Template.bind({});
+LinkWithHref.args = {
+  href: '/',
+  content: 'Link with href'
 };
