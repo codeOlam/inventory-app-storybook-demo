@@ -5,7 +5,8 @@ interface LinkProps {
     primary?: boolean;
     hasIcon?: boolean;
     href?: string;
-    content: string;
+    content?: string;
+    children?: string;
     onClick?: () => void;
   };
 
