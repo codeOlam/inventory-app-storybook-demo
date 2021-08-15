@@ -22,11 +22,19 @@ SecondaryLink.args = {
   content: 'secondary Link'
 };
 
-export const IconLink = Template.bind({});
-IconLink.args = {
+export const IconLinkInline = Template.bind({});
+IconLinkInline.args = {
   hasIcon: true,
   block: false,
   addIcon: 'facehappy',
+  content: 'Link with Icon'
+};
+
+export const IconLinkBlock = Template.bind({});
+IconLinkBlock.args = {
+  hasIcon: true,
+  block: true,
+  addIcon: 'facesad',
   content: 'Link with Icon'
 };
 
